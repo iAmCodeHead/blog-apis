@@ -2,8 +2,10 @@ const Joi = require('joi');
 const { objectId } = require('./custom.validator');
 
 const makeComment = {
+    params: Joi.object().keys({
+        postId: Joi.string().required().custom(objectId),
+    }),
   body: Joi.object().keys({
-    postId: Joi.string().custom(objectId),
     name: Joi.string().required(),
     email: Joi.string().required().email(),
     body: Joi.string().required(),
@@ -12,7 +14,7 @@ const makeComment = {
 
 const getComments = {
   params: Joi.object().keys({
-    postId: Joi.string().custom(objectId),
+    postId: Joi.string().required().custom(objectId),
   }),
 };
 

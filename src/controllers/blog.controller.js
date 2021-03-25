@@ -17,6 +17,34 @@ const getAllPosts = catchAsync(async (req, res) => {
     res.status(httpStatus.CREATED).send(posts);
 });
 
+const deleteOnePost = catchAsync(async (req, res) => {
+
+    const data = {
+        userId: req.userId,
+        postId: req.params.postId
+    };
+
+    const post = await blogService.deletePost(data);
+
+    if (!post) throw new ApiError(httpStatus.NOT_FOUND, 'Post not found');
+
+    res.status(httpStatus.CREATED).send(post);
+});
+
+const updateOnePost = catchAsync(async (req, res) => {
+
+    const params = {
+        userId: req.userId,
+        postId: req.params.postId
+    };
+
+    const post = await blogService.updatePost(params, req.body);
+
+    if (!post) throw new ApiError(httpStatus.NOT_FOUND, 'Post not found');
+
+    res.status(httpStatus.CREATED).send(post);
+});
+
 const getOnePost = catchAsync(async (req, res) => {
     const post = await blogService.getPostById(req.params.postId);
 
@@ -28,5 +56,7 @@ const getOnePost = catchAsync(async (req, res) => {
 module.exports = {
     newPost,
     getAllPosts,
-    getOnePost
+    getOnePost,
+    deleteOnePost,
+    updateOnePost
 }

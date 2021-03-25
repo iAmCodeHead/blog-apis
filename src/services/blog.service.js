@@ -19,8 +19,18 @@ const createPost = async (body) => {
     return Blog.find({});
   };
 
+  const deletePost = async (data) => {
+    return Blog.findOneAndDelete({_id: data.postId, userId: data.userId});
+  };
+
+  const updatePost = async (params, body) => {
+    return Blog.findOneAndUpdate({_id: params.postId, userId: params.userId}, body, {new: true});
+  };
+
 module.exports = {
     createPost,
     getPostById,
-    getAllPosts
+    getAllPosts,
+    deletePost,
+    updatePost
 }
