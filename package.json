@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iAmCodeHead/blog-api.git"
+    "url": "git+https://github.com/iAmCodeHead/blog-apis.git"
   },
   "keywords": [
     "simple",
@@ -52,7 +52,7 @@
   "author": "Samson Akande",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iAmCodeHead/blog-api/issues"
+    "url": "https://github.com/iAmCodeHead/blog-apis/issues"
   },
-  "homepage": "https://github.com/iAmCodeHead/blog-api#readme"
+  "homepage": "https://github.com/iAmCodeHead/blog-apis#readme"
 }
