@@ -11,6 +11,7 @@ Before getting started with the project please follow the below steps.
 ```
 git clone https://github.com/iAmCodeHead/blog-apis.git
 ```
+```
 cd blog-apis
 ```
 
@@ -37,4 +38,14 @@ Just run
 npm test
 ```
 It will show the tests passed or failed
+
+## **Live URL**
+```
+https://blog-crud-apis.herokuapp.com/v1/
+```
+
+## **Documentation**
+```
+https://documenter.getpostman.com/view/5960688/TzCHBq8q
+```
 
