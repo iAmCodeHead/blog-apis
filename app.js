@@ -7,6 +7,7 @@ const httpStatus = require('http-status');
 const config = require('./src/config/config');
 const morgan = require('./src/config/morgan');
 const { errorConverter, errorHandler } = require('./src/middlewares/errors');
+const { authLimiter } = require('./src/middlewares/rate.limiter');
 
 const v1Routes = require('./src/routes/v1');
 const ApiError = require('./src/utils/ApiError');
