@@ -9,6 +9,7 @@ router
     // .route('/')
     .get('/:userId', validate(userValidation.getUser), userController.getUser)
     .post('/create', validate(userValidation.createUser), userController.createUser)
+    .post('wait-list', validate(userValidation.waitList), userController.waitList)
     // .post('/login', validate(userValidation.signinUser), userController.signinUser)
 
 module.exports = router;

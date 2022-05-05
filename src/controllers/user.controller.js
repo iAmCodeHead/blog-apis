@@ -9,6 +9,11 @@ const createUser = catchAsync(async (req, res) => {
     res.status(httpStatus.CREATED).send(user);
   });
 
+  const waitList = catchAsync(async (req, res) => {
+    const user = await userService.waitList(req.body);
+    res.status(httpStatus.CREATED).send(user);
+  });
+
   const getUser = catchAsync(async (req, res) => {
     const user = await userService.getUserById(req.params.userId);
     
@@ -20,4 +25,5 @@ const createUser = catchAsync(async (req, res) => {
   module.exports = {
     createUser,
     getUser,
+    waitList
   };

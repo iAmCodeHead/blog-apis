@@ -10,6 +10,14 @@ const createUser = {
   }),
 };
 
+const waitList = {
+  body: Joi.object().keys({
+    email: Joi.string().required().email(),
+    name: Joi.string().required(),
+    phoneNumber: Joi.string().required(),
+  }),
+};
+
 const getUsers = {
   query: Joi.object().keys({
     name: Joi.string(),
@@ -29,5 +37,6 @@ const getUser = {
 module.exports = {
   createUser,
   getUsers,
-  getUser
+  getUser,
+  waitList
 };

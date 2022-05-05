@@ -1,5 +1,5 @@
 const httpStatus = require('http-status');
-const { User } = require('../models');
+const { User, WaitList } = require('../models');
 const ApiError = require('../utils/ApiError');
 const jwt = require("jsonwebtoken");
 
@@ -9,6 +9,10 @@ const createUser = async (userBody) => {
     }
     const user = await User.create(userBody);
     return user;
+  };
+
+  const waitList = async (userBody) => {
+    return await WaitList.create(userBody);
   };
 
 /**
@@ -27,5 +31,6 @@ const createUser = async (userBody) => {
   module.exports = {
     createUser,
     getUserById,
-    getUserByEmail
+    getUserByEmail,
+    waitList
   };
